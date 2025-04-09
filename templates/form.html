@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Predictor</title>
+</head>
+<body>
+    <h2>Loan Amount Prediction</h2>
+    <form method="POST">
+        <label>Income:</label><br>
+        <input type="number" step="0.01" name="income" required><br><br>
+
+        <label>Credit Score:</label><br>
+        <input type="number" step="0.01" name="credit_score" required><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>Predicted Loan Amount: ${{ prediction | round(2) }}</h3>
+    {% endif %}
+</body>
+</html>
